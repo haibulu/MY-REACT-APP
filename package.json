@@ -10,6 +10,7 @@
     "@types/node": "^16.18.108",
     "@types/react": "^18.3.8",
     "@types/react-dom": "^18.3.0",
+    "env-cmd": "^10.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
@@ -18,9 +19,17 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "start:dev": "env-cmd -f src/env/.env.development react-scripts start",
+  "start:qa": "env-cmd -f src/env/.env.qa react-scripts start",
+  "start:prod": "env-cmd -f src/env/.env.prod react-scripts start",
+  "start:stage": "env-cmd -f src/env/.env.stage react-scripts start",
+  "build": "react-scripts build",
+  "build:prod": "env-cmd -f src/env/.env.prod react-scripts build",
+  "build:dev": "env-cmd -f src/env/.env.development react-scripts build",
+  "build:stage": "env-cmd -f src/env/.env.stage react-scripts build",
+  "build:qa": "env-cmd -f src/env/.env.qa react-scripts build",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
